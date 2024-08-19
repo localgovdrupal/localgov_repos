@@ -1,6 +1,6 @@
 # LocalGov Drupal Repos
 
-This is a simple repo to create a GitHub pages site to list all of our repos.
+This is a simple repo to create [a GitHub pages site](https://localgovdrupal.github.io/localgov_repos/) to list all of our repos.
 
 We can then search them much faster than GitHub search does.
 
