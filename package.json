@@ -1,0 +1,11 @@
+{
+  "name": "lgd-github",
+  "version": "1.0.0",
+  "description": "Lists information about LGD GitHub repos",
+  "main": "fetchRepos.js",
+  "scripts": {
+    "start": "node ./assets/scripts/fetchRepos.js"
+  },
+  "author": "Mark Conroy",
+  "license": "ISC"
+}

@@ -1,0 +1,385 @@
+:root {
+  /* Colours */
+  --color-primary: #ffe146;
+  --color-secondary: #1d5368;
+
+  /* Grey Scale */
+  --color-white: #fff;
+  --color-grey-lightest: hsl(0, 0%, 95%);
+  --color-grey-lighter: hsl(0, 0%, 80%);
+  --color-grey-light: hsl(0, 0%, 65%);
+  --color-grey: hsl(0, 0%, 50%);
+  --color-grey-dark: hsl(0, 0%, 35%);
+  --color-grey-darker: hsl(0, 0%, 20%);
+  --color-grey-darkest: hsl(0, 0%, 5%);
+  --color-black: #000;
+
+  /* Fonts */
+  --font-primary: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-secondary: var(--font-primary);
+
+  /* Font Sizes */
+  /* Static Font Sizes */
+  --base-font-size: 18px;
+  --font-size-smallest: calc(var(--base-font-size) * 0.5);
+  --font-size-smaller: calc(var(--base-font-size) * 0.66);
+  --font-size-small: calc(var(--base-font-size) * 0.75);
+  --font-size-medium: calc(var(--base-font-size) * 1);
+  --font-size-large: calc(var(--base-font-size) * 1.5);
+  --font-size-larger: calc(var(--base-font-size) * 2);
+  --font-size-largest: calc(var(--base-font-size) * 2.5);
+  --font-size-mega: calc(var(--base-font-size) * 4);
+
+  /* Responsive Font Sizes */
+  /* These sizes use the variables from the static sizes */
+  --font-size-responsive-heading: clamp(
+    var(--font-size-medium),
+    0.78rem + 0.976vw,
+    var(--font-size-large)
+  );
+  --font-size-responsive-heading-large: clamp(
+    var(--font-size-large),
+    1.28rem + 0.976vw,
+    var(--font-size-largest)
+  );
+  --font-size-responsive-heading-larger: clamp(
+    var(--font-size-larger),
+    1.78rem + 0.976vw,
+    var(--font-size-largest)
+  );
+  --font-size-responsive-heading-largest: clamp(
+    var(--font-size-largest),
+    1.841rem + 2.927vw,
+    var(--font-size-mega)
+  );
+
+  /* Line Heights */
+  --scale-factor: 1.5;
+  --line-height: 1.5;
+  --line-height-small: 0.9;
+
+  /* Spacing Items */
+  --spacing: 1rem;
+  --spacing-smallest: calc(var(--spacing) * 0.25);
+  --spacing-smaller: calc(var(--spacing) * 0.5);
+  --spacing-small: calc(var(--spacing) * 0.75);
+  --spacing-medium: var(--spacing);
+  --spacing-large: calc(var(--spacing) * 1.5);
+  --spacing-larger: calc(var(--spacing) * 2);
+  --spacing-largest: calc(var(--spacing) * 2.5);
+  --spacing-mega: calc(var(--spacing) * 4);
+
+  /* Widths */
+  --width-small: 48em; /* 768px */
+  --width-medium: 60em; /* 960px */
+  --width-large: 73.75em; /* 1180px */
+  --width-xl: 90em; /* 1440px */
+  --width-100: 100%;
+  --width-content-area: var(--width-large);
+
+  /* Borders */
+  --border-style: solid;
+  --border-width: 2px;
+  --border-color: var(--color-grey-dark);
+  --border-radius: 0.5rem;
+  --border-radius-large: 1rem;
+  --border: var(--border-width) var(--border-style) var(--border-color);
+  --text-decoration-thickness: var(--border-width);
+
+  /* Animation */
+  --transition-time: 0.5s;
+
+  /* Grid Items */
+  --grid-columns: 12;
+  --grid-gap: var(--spacing);
+  --grid-gap-none: 0;
+  --grid-gap-small: var(--spacing-small);
+  --grid-gap-large: var(--spacing-large);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+*:not(dialog) {
+  margin-block: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-size: var(--base-font-size);
+  line-height: var(--line-height);
+  font-family: var(--font-primary);
+  background-color: var(--color-grey-lightest);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  --scale-factor-calculated: var(--scale-factor);
+  line-height: var(--line-height-small);
+  font-size: calc(var(--base-font-size) * var(--scale-factor-calculated));
+  font-weight: bold;
+}
+
+h1 {
+  --scale-factor-calculated: calc(
+    var(--scale-factor) * var(--scale-factor) * var(--scale-factor)
+  );
+}
+
+h2 {
+  --scale-factor-calculated: calc(var(--scale-factor) * var(--scale-factor));
+}
+
+h3 {
+  --scale-factor-calculated: var(--scale-factor);
+}
+
+h4,
+h5,
+h6 {
+  --scale-factor-calculated: 1;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  max-width: 80ch;
+}
+
+p:last-of-type {
+  margin-block-end: 0;
+}
+
+a {
+  color: var(--color-secondary);
+}
+a:focus-visible {
+  outline: 2px dashed var(--color-secondary);
+  outline-offset: 2px;
+}
+a:hover {
+  text-decoration-thickness: var(--text-decoration-thickness);
+}
+
+header,
+footer {
+  padding-block: var(--spacing);
+  background-color: var(--color-primary);
+  color: var(--color-black);
+}
+
+label {
+  display: block;
+}
+
+input {
+  padding: var(--spacing);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  box-shadow: 3px 3px 0px 2px var(--color-black);
+  transition: var(--transition-time);
+}
+input:focus-visible {
+  box-shadow: none;
+  outline: 1px solid var(--color-black);
+
+}
+
+.header__logo {
+  width: 200px;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+code {
+  background-color: var(--color-grey-lightest);
+  padding: 0.25em;
+}
+
+/* Grids */
+.grid {
+  display: grid;
+  gap: var(--grid-gap);
+  grid-template-columns: repeat(var(--grid-columns), 1fr);
+}
+.grid--gap-none {
+  gap: var(--grid-gap-none);
+}
+.grid--gap-small {
+  gap: var(--grid-gap-small);
+}
+.grid--gap-medium {
+  gap: var(--grid-gap);
+}
+.grid--gap-large {
+  gap: var(--grid-gap-large);
+}
+.grid--center {
+  justify-content: center;
+  align-items: center;
+}
+.grid--center-h {
+  justify-content: center;
+}
+.grid--center-v {
+  align-items: center;
+}
+@media screen and (min-width: 48em) {
+  .grid--halves,
+  .grid--thirds,
+  .grid--quarters {
+    --grid-columns: 2;
+  }
+}
+@media screen and (min-width: 60em) {
+  .grid--thirds {
+    --grid-columns: 3;
+  }
+  .grid--quarters {
+    --grid-columns: 4;
+  }
+}
+
+/* Containers */
+.container {
+  display: block;
+  width: 100%;
+  max-width: var(--width-content-area);
+  margin-inline: auto;
+}
+.container--size-small {
+  max-width: var(--width-small);
+}
+.container--size-medium {
+  max-width: var(--width-medium);
+}
+.container--size-large {
+  max-width: var(--width-large);
+}
+.container--size-xlarge {
+  max-width: var(--width-xl);
+}
+.container--size-100 {
+  max-width: none;
+}
+.container--alignment-start,
+.container--alignment-left {
+  margin-inline-start: 0;
+}
+.container--alignment-end,
+.container--alignment-right {
+  margin-inline-end: 0;
+}
+.container--padding-inline {
+  padding-inline: var(--spacing);
+}
+.container--padding-block {
+  padding-block: var(--spacing);
+}
+.container--padding {
+  padding: var(--spacing);
+}
+
+/* Flows */
+.flow {
+  --flow-size: var(--spacing);
+}
+.flow > * + * {
+  margin-block-start: var(--flow-size);
+}
+
+.flow--large {
+  --flow-size: var(--spacing-largest);
+}
+
+.hidden {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.skip-to-content {
+  position: absolute;
+  top: -1000px;
+}
+.skip-to-content:has(a:focus) {
+  position: relative;
+  top: 0;
+}
+
+.repos-list {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.repos-list__item {
+  padding: var(--spacing-large);
+  overflow-x: auto;
+  border-radius: var(--border-radius-large);
+  border: var(--border);
+  background-color: var(--color-primary);
+  color: var(--color-black);
+  box-shadow: 5px 5px 0px 2px var(--color-black);
+  transition: var(--transition-time);
+}
+
+.repos-list__item:focus-within,
+.repos-list__item:hover {
+  color: var(--color-white);
+  background-color: var(--color-secondary);
+}
+.repos-list__item:focus-within a,
+.repos-list__item:hover a {
+  color: var(--color-primary);
+}
+.repos-list__item:focus-within a:focus-visible {
+  outline: 2px dashed var(--color-primary);
+}
+.repos-list__item:focus-within code,
+.repos-list__item:hover code {
+  color: var(--color-black);
+}
+.repos-list:has(.repos-list__item:focus-within) .repos-list__item:not(:focus-within),
+.repos-list:has(.repos-list__item:hover) .repos-list__item:not(:hover) {
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+.repo__links li {
+  overflow: auto;
+}
