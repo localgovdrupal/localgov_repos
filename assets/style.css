@@ -362,6 +362,8 @@ code {
 .repos-list__item:hover {
   color: var(--color-white);
   background-color: var(--color-secondary);
+  box-shadow: none;
+  border-color: var(--color-secondary);
 }
 .repos-list__item:focus-within a,
 .repos-list__item:hover a {
