@@ -249,6 +249,11 @@ code {
 .grid--center-v {
   align-items: center;
 }
+.grid--halves,
+.grid--thirds,
+.grid--quarters {
+    --grid-columns: 1;
+}
 @media screen and (min-width: 48em) {
   .grid--halves,
   .grid--thirds,
