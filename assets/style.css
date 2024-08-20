@@ -372,6 +372,9 @@ code {
   padding-left: 0;
   list-style-type: none;
 }
+.repositories__controls > h3 {
+  margin-block-end: var(--spacing);
+}
 
 .repos-list__item {
   padding: var(--spacing-large);
