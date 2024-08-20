@@ -23,7 +23,7 @@ const fetchGithubData = async () => {
                   ${repo.description ? `<p>${repo.description}</p>` : ""}
                   <ul class="repo__links flow">
                     <li><a href="${repo.html_url}/issues">Open Issues: ${repo.open_issues_count}</a></li>
-                    <li><a href="${repo.html_url}/pulls">Open PRs: ${repo.openPRsCount}</a></li>
+                    <li><a href="${repo.html_url}/pulls">Open PRs</a></li>
                     <li><a href="${repo.html_url}/commits">Latest Commits</a></li>
                     <li><a href="${repo.html_url}/releases">Releases</a></li>
                     <li>Clone command:<br> <code>git clone ${repo.ssh_url}</code></li>
