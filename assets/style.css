@@ -414,3 +414,22 @@ code {
 .repo__links li {
   overflow: auto;
 }
+
+.repos-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.repos-table th,
+.repos-table td {
+  width: calc(100% / 3);
+}
+
+.repos-table h3,
+.repos-table code {
+  overflow: auto;
+}
+
+.repos-table td {
+  padding: var(--spacing);
+}

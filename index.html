@@ -70,6 +70,24 @@
 
       <h2>LocalGov Drupal Github Statistics</h2>
       <p>Below are some statistics for the LocalGov Drupal Github repository.</p>
+      <h2 class="repositories-title">Repositories <span class="repositories-count"></span></h2>
+      <div class="repositories flow flow--large">
+        <form id="search-form" class="search-form">
+          <label for="search">Search by title or description</label>
+          <input type="text" id="search" name="search" placeholder="Search" />
+        </form>
+
+        <div class="repositories__controls">
+          <h3>View as:</h3>
+          <div class="quick-links">
+            <ul>
+              <li><button class="button-link" data-active="true">Grid</button></li>
+              <li><button class="button-link" data-active="false">List</button></li>
+              <li><button class="button-link" data-active="false">Table</button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <div id="app" class="flow flow--large"></div>
     </div>
   </main>
