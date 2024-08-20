@@ -7,7 +7,7 @@ const fetchGithubData = async () => {
   const searchInput = document.querySelector("#search");
   let currentSearchValue = "";
 
-  repositoriesCount.textContent = allRepos.length;
+  repositoriesCount.textContent = `(${allRepos.length})`;
 
   // Function to handle the list and grid view
   const handleListing = (repos, view) => {
@@ -108,7 +108,7 @@ const fetchGithubData = async () => {
     const activeButton = quickLinks.querySelector("[data-active=true]");
     const view = activeButton.textContent.toLowerCase();
     renderView(filteredRepos, view);
-    repositoriesCount.textContent = filteredRepos.length;
+    repositoriesCount.textContent = `(${filteredRepos.length})`;
   });
 };
 
