@@ -342,6 +342,32 @@ code {
   top: 0;
 }
 
+.quick-links ul {
+  display: flex;
+  gap: var(--spacing);
+  list-style-type: none;
+  padding-left: 0;
+  flex-wrap: wrap;
+}
+
+.button-link {
+  display: inline-block;
+  color: var(--color-black);
+  background-color: var(--color-primary);
+  padding: var(--spacing);
+  border-radius: var(--border-radius);
+  border: var(--border);
+  box-shadow: 3px 3px 0px 2px var(--color-black);
+  transition: var(--transition-time);
+}
+.button-link:focus-visible,
+.button-link:hover {
+  box-shadow: none;
+}
+.button-link:active {
+  transform: scale(0.95);
+}
+
 .repos-list {
   padding-left: 0;
   list-style-type: none;
