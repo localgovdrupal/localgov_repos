@@ -26,7 +26,11 @@ const fetchGithubData = async () => {
                     <li><a href="${repo.html_url}/pulls">Open PRs</a></li>
                     <li><a href="${repo.html_url}/commits">Latest Commits</a></li>
                     <li><a href="${repo.html_url}/releases">Releases</a></li>
-                    <li>Clone command:<br> <code>git clone ${repo.ssh_url}</code></li>
+                    <li>
+                        Clone command:<br>
+                        <pre><code>git clone ${repo.ssh_url}</code></pre>
+                        <button type="button" class="button-link copy-clone">Copy clone command</button>
+                    </li>
                   </ul>
                 </article>
               </li>
@@ -54,7 +58,8 @@ const fetchGithubData = async () => {
                   </td>
                   <td>
                     ${repo.description ? `<p>${repo.description}</p>` : ""}
-                    <code>git clone ${repo.ssh_url}</code>
+                    <pre><code>git clone ${repo.ssh_url}</code></pre>
+                    <button type="button" class="button-link copy-clone">Copy clone command</button>
                   </td>
                   <td>
                     <ul>
@@ -110,6 +115,15 @@ const fetchGithubData = async () => {
     renderView(filteredRepos, view);
     repositoriesCount.textContent = `(${filteredRepos.length})`;
   });
+
+  const copyCloneCommands = document.querySelectorAll(".copy-clone");
+  copyCloneCommands.forEach((command) => {
+    command.addEventListener("click", (event) => {
+      const cloneCommand = event.target.previousElementSibling.textContent;
+      navigator.clipboard.writeText(cloneCommand);
+    });
+  });
+
 };
 
 fetchGithubData();

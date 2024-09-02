@@ -416,10 +416,6 @@ code {
   transform: scale(0.95);
 }
 
-.repo__links li {
-  overflow: auto;
-}
-
 .repos-table {
   width: 100%;
   table-layout: fixed;
@@ -437,4 +433,19 @@ code {
 
 .repos-table td {
   padding: var(--spacing);
+}
+
+.repo pre {
+  max-width: 100%;
+  margin-block-end: var(--spacing);
+  padding: var(--spacing);
+  border: var(--border);
+  overflow: scroll;
+  background-color: var(--color-grey-lightest);
+}
+
+.copy-clone {
+  padding: var(--spacing-smaller);
+  background-color: var(--color-grey-dark);
+  color: var(--color-white);
 }
