@@ -91,7 +91,7 @@ const fetchGithubData = async () => {
     app.innerHTML = handleListing(repos, view);
   };
 
-  app.innerHTML = handleListing(allRepos, 'grid');
+  app.innerHTML = handleListing(allRepos, 'table');
 
   const quickLinks = document.querySelector(".repositories__controls .quick-links");
   quickLinks.addEventListener("click", (event) => {
@@ -104,8 +104,6 @@ const fetchGithubData = async () => {
       renderView(filteredRepos, view);
     }
   });
-
-
 
   searchForm.addEventListener("keyup", (event) => {
     currentSearchValue = searchInput.value.toLowerCase();
