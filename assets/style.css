@@ -419,11 +419,13 @@ code {
 .repos-table {
   width: 100%;
   table-layout: fixed;
+  border-collapse: collapse;
 }
 
 .repos-table th,
 .repos-table td {
   width: calc(100% / 3);
+  border: var(--border);
 }
 
 .repos-table h3,

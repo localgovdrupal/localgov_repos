@@ -91,7 +91,7 @@ const fetchGithubData = async () => {
     app.innerHTML = handleListing(repos, view);
   };
 
-  app.innerHTML = handleListing(allRepos, 'table');
+  app.innerHTML = handleListing(allRepos, 'grid');
 
   const quickLinks = document.querySelector(".repositories__controls .quick-links");
   quickLinks.addEventListener("click", (event) => {
