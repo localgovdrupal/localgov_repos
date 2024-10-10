@@ -46,6 +46,7 @@ const fetchGithubData = async () => {
             <tr>
               <th>Name</th>
               <th>Info</th>
+              <th>Issues</th>
               <th>Links</th>
             </tr>
           </thead>
@@ -61,9 +62,9 @@ const fetchGithubData = async () => {
                     <pre><code>git clone ${repo.ssh_url}</code></pre>
                     <button type="button" class="button-link copy-clone">Copy clone command</button>
                   </td>
+                  <td><li><a href="${repo.html_url}/issues">Open Issues: ${repo.open_issues_count}</a></li></td>
                   <td>
                     <ul>
-                      <li><a href="${repo.html_url}/issues">Open Issues: ${repo.open_issues_count}</a></li>
                       <li><a href="${repo.html_url}/pulls">Open PRs</a></li>
                       <li><a href="${repo.html_url}/commits">Latest Commits</a></li>
                       <li><a href="${repo.html_url}/releases">Releases</a></li>
