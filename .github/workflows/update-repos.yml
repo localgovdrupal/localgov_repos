@@ -1,4 +1,4 @@
-name: Nightly Update
+name: Update Repos
 
 on:
   schedule:
