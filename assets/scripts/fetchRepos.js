@@ -15,9 +15,12 @@ let perPage = 20; // Maximum allowed by GitHub API
     page++;
   }
 
-  // Write the data to a file
-  fs.writeFile('./assets/repos.json', JSON.stringify(allRepos, null, 2), (err) => {
+  // Filter out archived repositories
+  const activeRepos = allRepos.filter(repo => !repo.archived);
+
+  // Write the filtered data to a file
+  fs.writeFile('./assets/repos.json', JSON.stringify(activeRepos, null, 2), (err) => {
     if (err) throw err;
-    console.log('Data has been written to repos.json');
+    console.log(`Data has been written to repos.json (${activeRepos.length} active repositories)`);
   });
 })();
