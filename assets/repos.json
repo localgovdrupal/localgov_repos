@@ -2178,7 +2178,7 @@
     "mirror_url": null,
     "archived": false,
     "disabled": false,
-    "open_issues_count": 63,
+    "open_issues_count": 62,
     "license": {
       "key": "gpl-2.0",
       "name": "GNU General Public License v2.0",
@@ -2194,7 +2194,7 @@
     "topics": [],
     "visibility": "public",
     "forks": 1,
-    "open_issues": 63,
+    "open_issues": 62,
     "watchers": 2,
     "default_branch": "3.x",
     "permissions": {
@@ -7643,8 +7643,8 @@
     "releases_url": "https://api.github.com/repos/localgovdrupal/localgov_repos/releases{/id}",
     "deployments_url": "https://api.github.com/repos/localgovdrupal/localgov_repos/deployments",
     "created_at": "2024-08-19T11:59:52Z",
-    "updated_at": "2026-05-31T06:44:27Z",
-    "pushed_at": "2026-05-31T06:44:24Z",
+    "updated_at": "2026-06-01T08:18:28Z",
+    "pushed_at": "2026-06-01T08:18:24Z",
     "git_url": "git://github.com/localgovdrupal/localgov_repos.git",
     "ssh_url": "git@github.com:localgovdrupal/localgov_repos.git",
     "clone_url": "https://github.com/localgovdrupal/localgov_repos.git",
